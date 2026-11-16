@@ -1,2 +1,0 @@
-Placeholder para QR Code PIX
-Este arquivo será substituído pelo QR Code real quando a chave PIX for confirmada
