@@ -1,0 +1,15 @@
+{
+  "name": "site-ampd",
+  "version": "1.0.0",
+  "description": "Site oficial da AMPD — Associação Marauense da Pessoa com Deficiência (Marau/RS)",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./src/input.css -o ./public/assets/css/styles.css --watch",
+    "build": "npx tailwindcss -i ./src/input.css -o ./public/assets/css/styles.css --minify"
+  },
+  "keywords": ["ampd", "marau", "acessibilidade", "inclusão"],
+  "author": "AMPD Marau",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}

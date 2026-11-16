@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Descubra como você pode ajudar a AMPD: doação via PIX, Nota Fiscal Gaúcha, voluntariado, parcerias e associação.">
+  <title>Como ajudar | AMPD Marau</title>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <style>.high-contrast{filter:contrast(1.5);}</style>
+</head>
+<body class="antialiased">
+  <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+  <div class="bg-navy text-white py-2 px-4">
+    <div class="container mx-auto flex justify-between items-center text-sm">
+      <span>Acessibilidade</span>
+      <button id="toggle-accessibility" class="hover:text-cyan-light transition" aria-label="Abrir painel de acessibilidade"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"/></svg></button>
+    </div>
+  </div>
+
+  <header class="sticky top-0 z-40 bg-paper/95 backdrop-blur-sm shadow-sm">
+    <div class="container mx-auto px-4 py-4">
+      <nav class="flex items-center justify-between">
+        <a href="/"><img src="/assets/img/logo-ampd-256.png" alt="AMPD" class="h-12 w-auto"></a>
+        <div class="hidden lg:flex items-center bg-white rounded-pill shadow-soft px-6 py-2 gap-6">
+          <a href="/" class="text-sm font-outfit hover:text-teal transition">Início</a>
+          <a href="/pages/a-ampd.html" class="text-sm font-outfit hover:text-teal transition">A AMPD</a>
+          <a href="/pages/o-que-fazemos.html" class="text-sm font-outfit hover:text-teal transition">O que fazemos</a>
+          <a href="/pages/noticias.html" class="text-sm font-outfit hover:text-teal transition">Notícias</a>
+          <a href="/pages/eventos.html" class="text-sm font-outfit hover:text-teal transition">Eventos</a>
+          <a href="/pages/publicacoes.html" class="text-sm font-outfit hover:text-teal transition">Publicações</a>
+          <a href="/pages/como-ajudar.html" class="text-sm font-outfit text-teal font-semibold">Como ajudar</a>
+          <a href="/pages/contato.html" class="text-sm font-outfit hover:text-teal transition">Contato</a>
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="#doe-pix" class="btn-primary hidden md:inline-block">Doe agora</a>
+          <button id="mobile-menu-btn" class="lg:hidden p-2" aria-label="Abrir menu" aria-expanded="false"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        </div>
+      </nav>
+      <div id="mobile-menu" class="hidden lg:hidden mt-4 bg-white rounded-card shadow-card p-4" tabindex="-1">
+        <nav class="flex flex-col gap-3">
+          <a href="/" class="py-2 px-4 hover:bg-paper rounded transition">Início</a>
+          <a href="/pages/a-ampd.html" class="py-2 px-4 hover:bg-paper rounded transition">A AMPD</a>
+          <a href="/pages/o-que-fazemos.html" class="py-2 px-4 hover:bg-paper rounded transition">O que fazemos</a>
+          <a href="/pages/noticias.html" class="py-2 px-4 hover:bg-paper rounded transition">Notícias</a>
+          <a href="/pages/eventos.html" class="py-2 px-4 hover:bg-paper rounded transition">Eventos</a>
+          <a href="/pages/publicacoes.html" class="py-2 px-4 hover:bg-paper rounded transition">Publicações</a>
+          <a href="/pages/como-ajudar.html" class="py-2 px-4 bg-lavender-light rounded">Como ajudar</a>
+          <a href="/pages/contato.html" class="py-2 px-4 hover:bg-paper rounded transition">Contato</a>
+          <a href="#doe-pix" class="btn-primary text-center mt-2">Doe agora</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="bg-gradient-to-br from-cyan/10 to-lavender-light/20 py-12 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-outfit font-light text-indigo mb-6">Como ajudar</h1>
+          <p class="text-xl md:text-2xl text-text-dark/80 font-outfit font-light">Sua participação faz a diferença</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Doação PIX -->
+    <section id="doe-pix" class="py-12 md:py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-16 h-16 bg-teal rounded-full flex items-center justify-center flex-shrink-0"><svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+            <div><h2 class="text-3xl md:text-4xl font-outfit font-light text-indigo">Doação via PIX</h2><p class="text-text-dark/70">A forma mais rápida e direta de ajudar</p></div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8 items-start">
+            <div class="flex flex-col items-center">
+              <div class="bg-paper p-6 rounded-card mb-4"><img src="/assets/img/qr-pix-placeholder.png" alt="QR Code PIX da AMPD" class="w-64 h-64" loading="lazy"></div>
+              <p class="text-sm text-text-dark/70 text-center">Escaneie com o app do seu banco</p>
+            </div>
+            <div class="space-y-4">
+              <div><label class="block text-sm font-semibold mb-2">Chave PIX:</label><div class="flex gap-2"><input type="text" value="CHAVE PIX A CONFIRMAR" readonly class="flex-1 px-4 py-3 bg-paper rounded-lg border border-lavender" aria-label="Chave PIX da AMPD"><button data-copy-pix="CHAVE PIX A CONFIRMAR" class="btn-primary whitespace-nowrap">Copiar</button></div><div id="pix-feedback" role="status" aria-live="polite" class="mt-2 text-sm text-teal"></div></div>
+              <div class="bg-lavender-light p-4 rounded-lg"><p class="text-sm"><strong>CNPJ:</strong> 17.451.380/0001-83</p><p class="text-sm mt-2"><strong>Associação Marauense da Pessoa com Deficiência - AMPD</strong></p></div>
+              <p class="text-xs text-text-dark/60"><strong>Nota:</strong> A chave PIX e o QR Code acima são placeholders e precisam ser confirmados pela diretoria da AMPD.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nota Fiscal Gaúcha -->
+    <section id="nfg" class="py-12 md:py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-16 h-16 bg-indigo rounded-full flex items-center justify-center flex-shrink-0"><svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+            <div><h2 class="text-3xl md:text-4xl font-outfit font-light text-indigo">Nota Fiscal Gaúcha</h2><p class="text-text-dark/70">Doe seus créditos sem gastar nada</p></div>
+          </div>
+
+          <div class="card mb-6"><p class="text-lg mb-4">A AMPD é habilitada no programa <strong>Nota Fiscal Gaúcha</strong> da SEFAZ/RS. Você pode doar seus créditos acumulados para a associação de forma simples e gratuita.</p><h3 class="font-outfit text-xl font-semibold mb-3 text-indigo">Como doar:</h3><ol class="space-y-3"><li class="flex items-start gap-3"><span class="flex-shrink-0 w-8 h-8 bg-teal text-white rounded-full flex items-center justify-center font-semibold">1</span><span>Acesse o site da <a href="https://www.sefaz.rs.gov.br/" target="_blank" rel="noopener" class="text-teal hover:underline">SEFAZ/RS</a> ou o app Nota Fiscal Gaúcha</span></li><li class="flex items-start gap-3"><span class="flex-shrink-0 w-8 h-8 bg-teal text-white rounded-full flex items-center justify-center font-semibold">2</span><span>Faça login com seu CPF</span></li><li class="flex items-start gap-3"><span class="flex-shrink-0 w-8 h-8 bg-teal text-white rounded-full flex items-center justify-center font-semibold">3</span><span>Vá em "Doação" e busque por "AMPD" ou "Associação Marauense"</span></li><li class="flex items-start gap-3"><span class="flex-shrink-0 w-8 h-8 bg-teal text-white rounded-full flex items-center justify-center font-semibold">4</span><span>Escolha o valor e confirme a doação</span></li></ol></div>
+
+          <div class="bg-cyan/10 border-l-4 border-cyan p-4"><p class="text-sm"><strong>Importante:</strong> Os créditos do Nota Fiscal Gaúcha que você doa não saem do seu bolso — são gerados pela participação no programa. É uma forma de apoiar a AMPD sem custos!</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Voluntariado -->
+    <section id="voluntariado" class="py-12 md:py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-16 h-16 bg-cyan rounded-full flex items-center justify-center flex-shrink-0"><svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></div>
+            <div><h2 class="text-3xl md:text-4xl font-outfit font-light text-indigo">Seja Voluntário</h2><p class="text-text-dark/70">Doe seu tempo e talento</p></div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <div><p class="text-lg mb-4">A AMPD está sempre aberta a voluntários que queiram contribuir com seu tempo, habilidades e dedicação para promover inclusão e autonomia.</p><p class="mb-4">Áreas em que você pode ajudar:</p><ul class="space-y-2"><li class="flex items-start gap-2"><svg class="w-5 h-5 text-teal flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Apoio nas oficinas do Centro de Atendimento</span></li><li class="flex items-start gap-2"><svg class="w-5 h-5 text-teal flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Atividades recreativas e culturais</span></li><li class="flex items-start gap-2"><svg class="w-5 h-5 text-teal flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Comunicação e redes sociais</span></li><li class="flex items-start gap-2"><svg class="w-5 h-5 text-teal flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Organização de eventos e campanhas</span></li><li class="flex items-start gap-2"><svg class="w-5 h-5 text-teal flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Apoio administrativo</span></li></ul></div>
+            <div class="card bg-lavender-light/30"><h3 class="font-outfit text-xl font-semibold mb-4 text-indigo">Como se candidatar</h3><p class="mb-4">Entre em contato conosco para saber mais sobre as oportunidades de voluntariado disponíveis.</p><a href="/pages/contato.html" class="btn-primary">Entrar em contato</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Parcerias e Empresas -->
+    <section class="py-12 md:py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="section-title">Parcerias e Empresas</h2>
+          <div class="card mb-6"><p class="text-lg mb-4">Sua empresa pode fazer a diferença apoiando os projetos da AMPD através de:</p><div class="grid md:grid-cols-2 gap-6"><div class="flex items-start gap-3"><div class="w-12 h-12 bg-teal/10 rounded-lg flex items-center justify-center flex-shrink-0"><svg class="w-6 h-6 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><div><h3 class="font-semibold mb-1">Doações e patrocínios</h3><p class="text-sm text-text-dark/70">Apoio financeiro para projetos e atividades</p></div></div><div class="flex items-start gap-3"><div class="w-12 h-12 bg-teal/10 rounded-lg flex items-center justify-center flex-shrink-0"><svg class="w-6 h-6 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div><div><h3 class="font-semibold mb-1">Cumprimento da Lei de Cotas</h3><p class="text-sm text-text-dark/70">Parceria para inclusão no mercado de trabalho</p></div></div><div class="flex items-start gap-3"><div class="w-12 h-12 bg-teal/10 rounded-lg flex items-center justify-center flex-shrink-0"><svg class="w-6 h-6 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div><div><h3 class="font-semibold mb-1">Incentivos fiscais</h3><p class="text-sm text-text-dark/70">Possibilidade de dedução fiscal em doações</p></div></div><div class="flex items-start gap-3"><div class="w-12 h-12 bg-teal/10 rounded-lg flex items-center justify-center flex-shrink-0"><svg class="w-6 h-6 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg></div><div><h3 class="font-semibold mb-1">Responsabilidade social</h3><p class="text-sm text-text-dark/70">Fortalecimento da marca com ações de inclusão</p></div></div></div></div>
+          <a href="/pages/contato.html" class="btn-primary">Fale com a gente</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Associe-se -->
+    <section id="associar" class="py-12 md:py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-16 h-16 bg-lavender rounded-full flex items-center justify-center flex-shrink-0"><svg class="w-8 h-8 text-indigo" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg></div>
+            <div><h2 class="text-3xl md:text-4xl font-outfit font-light text-indigo">Associe-se à AMPD</h2><p class="text-text-dark/70">Faça parte da nossa comunidade</p></div>
+          </div>
+
+          <div class="card"><p class="text-lg mb-4">Torne-se associado da AMPD e participe ativamente das decisões e ações da associação. Associados têm direito a voto nas assembleias e podem concorrer a cargos na diretoria.</p><h3 class="font-outfit text-xl font-semibold mb-3 text-indigo">Benefícios de ser associado:</h3><ul class="space-y-2 mb-6"><li class="flex items-start gap-2"><svg class="w-5 h-5 text-teal flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Participação nas Assembleias Gerais</span></li><li class="flex items-start gap-2"><svg class="w-5 h-5 text-teal flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Direito a voto nas decisões da associação</span></li><li class="flex items-start gap-2"><svg class="w-5 h-5 text-teal flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Possibilidade de concorrer à Diretoria</span></li><li class="flex items-start gap-2"><svg class="w-5 h-5 text-teal flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Fazer parte de uma comunidade engajada</span></li></ul><div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-4"><p class="text-sm"><strong>Atenção:</strong> Valores de mensalidade e requisitos para associação não foram encontrados em fontes públicas. Entre em contato com a AMPD para obter essas informações.</p></div><a href="/pages/contato.html" class="btn-primary">Entre em contato para se associar</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-navy text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        <div><img src="/assets/img/logo-ampd-dark-512.png" alt="AMPD" class="h-16 mb-4"><p class="text-sm text-cyan-light mb-4">Nada sobre nós, sem nós.</p><p class="text-sm text-white/70">Associação Marauense da Pessoa com Deficiência</p></div>
+        <div><h3 class="font-outfit font-semibold mb-4">Links rápidos</h3><ul class="space-y-2 text-sm"><li><a href="/pages/a-ampd.html" class="hover:text-cyan-light transition">A AMPD</a></li><li><a href="/pages/o-que-fazemos.html" class="hover:text-cyan-light transition">O que fazemos</a></li><li><a href="/pages/noticias.html" class="hover:text-cyan-light transition">Notícias</a></li><li><a href="/pages/eventos.html" class="hover:text-cyan-light transition">Eventos</a></li><li><a href="/pages/como-ajudar.html" class="hover:text-cyan-light transition">Como ajudar</a></li><li><a href="/pages/contato.html" class="hover:text-cyan-light transition">Contato</a></li></ul></div>
+        <div><h3 class="font-outfit font-semibold mb-4">Contato</h3><ul class="space-y-2 text-sm text-white/70"><li>Rua Padres Capuchinhos, 136</li><li>Centro, Marau/RS</li><li><a href="mailto:ampdmarau@outlook.com.br" class="hover:text-cyan-light transition">ampdmarau@outlook.com.br</a></li><li><a href="tel:+5554999148195" class="hover:text-cyan-light transition">(54) 99914-8195</a></li></ul></div>
+        <div><h3 class="font-outfit font-semibold mb-4">Newsletter</h3><p class="text-sm text-white/70 mb-4">Receba nossas novidades</p><form class="newsletter-form"><input type="email" required placeholder="Seu e-mail" class="w-full px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 mb-2 focus:border-cyan-light transition" aria-label="E-mail para newsletter"><button type="submit" class="w-full btn-primary bg-teal hover:bg-cyan-bright">Inscrever-se</button></form><div data-newsletter-feedback class="mt-2 text-sm"></div></div>
+      </div>
+      <div class="border-t border-white/20 pt-8 mb-8"><div class="max-w-2xl mx-auto text-center"><h3 class="font-outfit text-xl font-semibold mb-4">Doe via PIX</h3><div class="flex flex-col sm:flex-row gap-4 items-center justify-center"><input type="text" value="CHAVE PIX A CONFIRMAR" readonly class="px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white text-center" aria-label="Chave PIX"><button data-copy-pix="CHAVE PIX A CONFIRMAR" class="btn-primary bg-teal hover:bg-cyan-bright">Copiar chave</button></div></div></div>
+      <div class="border-t border-white/20 pt-8 text-center text-sm text-white/70"><p>&copy; 2024 AMPD. Todos os direitos reservados.</p><p class="mt-2">CNPJ: 17.451.380/0001-83</p></div>
+    </div>
+  </footer>
+
+  <div vw class="enabled"><div vw-access-button class="active"></div><div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div></div>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

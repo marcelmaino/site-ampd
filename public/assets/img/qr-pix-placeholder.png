@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256" height="256" xmlns="http://www.w3.org/2000/svg">
+  <rect width="256" height="256" fill="#F5FBFE"/>
+  <rect x="20" y="20" width="216" height="216" fill="white" stroke="#E0DEEF" stroke-width="2" rx="8"/>
+  
+  <!-- Grid pattern to simulate QR code -->
+  <g fill="#231F20" opacity="0.2">
+    <rect x="40" y="40" width="60" height="60" rx="4"/>
+    <rect x="156" y="40" width="60" height="60" rx="4"/>
+    <rect x="40" y="156" width="60" height="60" rx="4"/>
+    
+    <rect x="60" y="60" width="20" height="20" fill="#F5FBFE"/>
+    <rect x="176" y="60" width="20" height="20" fill="#F5FBFE"/>
+    <rect x="60" y="176" width="20" height="20" fill="#F5FBFE"/>
+  </g>
+  
+  <!-- Center text -->
+  <text x="128" y="120" font-family="Outfit, sans-serif" font-size="14" fill="#076A97" text-anchor="middle" font-weight="600">QR CODE PIX</text>
+  <text x="128" y="145" font-family="Atkinson Hyperlegible, sans-serif" font-size="12" fill="#231F20" text-anchor="middle">A CONFIRMAR</text>
+</svg>
