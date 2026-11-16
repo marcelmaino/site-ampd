@@ -315,4 +315,6 @@ document.addEventListener('DOMContentLoaded', () => {
   setupFormValidation();
   setupNewsletter();
   loadVLibras();
+  // Ano atual no rodapé
+  document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
 });
