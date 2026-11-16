@@ -3,6 +3,8 @@ class AccessibilityPanel {
   constructor() {
     this.contrastMode = localStorage.getItem('contrast') === 'high';
     this.fontSize = parseInt(localStorage.getItem('fontSize')) || 100;
+    this.osReduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.reduceMotion = document.documentElement.classList.contains('reduce-motion') || this.osReduceMotion;
     this.init();
   }
 
@@ -32,6 +34,13 @@ class AccessibilityPanel {
             <input type="checkbox" id="toggle-contrast" ${this.contrastMode ? 'checked' : ''} class="mr-2">
             <span class="text-sm">Alto contraste</span>
           </label>
+        </div>
+        <div>
+          <label class="flex items-center cursor-pointer">
+            <input type="checkbox" id="toggle-motion" ${this.reduceMotion ? 'checked' : ''} ${this.osReduceMotion ? 'disabled' : ''} class="mr-2">
+            <span class="text-sm">Reduzir movimento</span>
+          </label>
+          ${this.osReduceMotion ? '<p class="text-xs text-text-dark/70 mt-1">Definido nas preferências do seu sistema</p>' : ''}
         </div>
       </div>
     `;
@@ -63,6 +72,14 @@ class AccessibilityPanel {
       this.applySettings();
     });
 
+    const motionToggle = document.getElementById('toggle-motion');
+    if (motionToggle && !this.osReduceMotion) {
+      motionToggle.addEventListener('change', (e) => {
+        this.reduceMotion = e.target.checked;
+        this.applyMotionPreference();
+      });
+    }
+
     document.addEventListener('click', (e) => {
       if (!panel.contains(e.target) && e.target.id !== 'toggle-accessibility') {
         panel.classList.add('hidden');
@@ -82,6 +99,21 @@ class AccessibilityPanel {
 
     localStorage.setItem('fontSize', this.fontSize);
     localStorage.setItem('contrast', this.contrastMode ? 'high' : 'normal');
+  }
+
+  applyMotionPreference() {
+    const root = document.documentElement;
+    if (this.reduceMotion) {
+      root.classList.add('reduce-motion');
+      document.querySelectorAll('main h1, main h2, main .card, main .stat-card, main [data-reveal], .reveal, main img').forEach((el) => {
+        el.classList.add('is-visible');
+      });
+    } else {
+      root.classList.remove('reduce-motion');
+    }
+    try {
+      localStorage.setItem('reduceMotion', this.reduceMotion ? '1' : '0');
+    } catch (e) { /* storage indisponível */ }
   }
 }
 
@@ -172,8 +204,8 @@ function setupCounters() {
       }
     };
 
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    
+    const prefersReducedMotion = shouldReduceMotion();
+
     if (prefersReducedMotion) {
       element.textContent = target.toLocaleString('pt-BR');
     } else {
@@ -305,11 +337,65 @@ function loadVLibras() {
   };
 }
 
+
+function shouldReduceMotion() {
+  return document.documentElement.classList.contains('reduce-motion') ||
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
+function revealSelector() {
+  return [
+    'main h1',
+    'main h2:not(.card h2)',
+    'main .card',
+    'main .stat-card',
+    'main [data-reveal]',
+    '.reveal',
+    'main img:not(.card img):not([data-reveal] img):not(a img)'
+  ].join(',');
+}
+
+function setupReveal() {
+  document.documentElement.setAttribute('data-anim-ready', '');
+
+  const items = document.querySelectorAll(revealSelector());
+
+  if (shouldReduceMotion()) {
+    items.forEach((el) => el.classList.add('is-visible'));
+    return;
+  }
+
+  const groups = new Map();
+  items.forEach((el) => {
+    const parent = el.parentElement;
+    if (!parent) return;
+    if (!groups.has(parent)) groups.set(parent, []);
+    groups.get(parent).push(el);
+  });
+  groups.forEach((els) => {
+    if (els.length < 2) return;
+    els.forEach((el, i) => {
+      el.style.setProperty('--reveal-delay', `${Math.min(i * 90, 450)}ms`);
+    });
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+  items.forEach((el) => observer.observe(el));
+}
+
 // Inicialização
 document.addEventListener('DOMContentLoaded', () => {
   new AccessibilityPanel();
   new MobileMenu();
   setupPixCopy();
+  setupReveal();
   setupCounters();
   setupFilters();
   setupFormValidation();

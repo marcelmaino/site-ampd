@@ -66,3 +66,145 @@
     @apply text-3xl md:text-4xl lg:text-5xl font-outfit font-light text-indigo mb-6;
   }
 }
+
+/* ------------------------------------------------------------------ */
+/* Elementos gráficos decorativos e animações de entrada              */
+/* ------------------------------------------------------------------ */
+
+@layer components {
+  .decor-section,
+  .decor-footer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .decor-layer {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .decor-section > *:not(.decor-layer):not(.section-wave),
+  .decor-footer > *:not(.decor-layer):not(.section-wave) {
+    position: relative;
+    z-index: 1;
+  }
+
+  .decor-svg,
+  .decor-shape {
+    position: absolute;
+    pointer-events: none;
+    display: block;
+  }
+
+  .decor-tl { top: -3.5rem; left: -4rem; width: 18rem; height: 18rem; }
+  .decor-tr { top: -2.5rem; right: -3.5rem; width: 16rem; height: 16rem; }
+  .decor-bl { bottom: -3.5rem; left: -3rem; width: 16rem; height: 16rem; }
+  .decor-br { bottom: -2.75rem; right: -2.75rem; width: 14rem; height: 14rem; }
+  .decor-ml { top: 38%; left: -3.5rem; width: 11rem; height: 11rem; }
+  .decor-mr { top: 28%; right: -4rem; width: 13rem; height: 13rem; }
+  .decor-tc { top: -2rem; left: 50%; width: 12rem; height: 12rem; margin-left: -6rem; }
+  .decor-sm { width: 8rem; height: 8rem; }
+  .decor-md { width: 12rem; height: 12rem; }
+  .decor-lg { width: 20rem; height: 20rem; }
+
+  .section-wave {
+    display: block;
+    line-height: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .section-wave svg {
+    display: block;
+    width: 100%;
+    height: 2.75rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-wave svg { height: 4rem; }
+  }
+
+  /* No celular, as formas ficam só nos cantos para não atravessar o texto */
+  @media (max-width: 767px) {
+    .decor-tl { top: -5rem; left: -6rem; width: 12rem; height: 12rem; }
+    .decor-tr { top: -5rem; right: -6rem; width: 11rem; height: 11rem; }
+    .decor-bl { bottom: -5rem; left: -5.5rem; width: 11rem; height: 11rem; }
+    .decor-br { bottom: -5rem; right: -5.5rem; width: 10rem; height: 10rem; }
+    .decor-ml { top: 42%; left: -6.5rem; width: 9rem; height: 9rem; }
+    .decor-mr { top: 30%; right: -6.5rem; width: 9rem; height: 9rem; }
+    .decor-sm, .decor-md { width: 8rem; height: 8rem; }
+  }
+
+  .stat-card {
+    position: relative;
+  }
+}
+
+@keyframes decor-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.js:not(.reduce-motion) .decor-float {
+  animation: decor-float 7s ease-in-out infinite;
+}
+
+.js:not(.reduce-motion) .decor-float-slow {
+  animation: decor-float 10s ease-in-out infinite;
+  animation-delay: -3s;
+}
+
+/* Estado inicial das entradas: só com JS ativo e movimento permitido */
+.js:not(.reduce-motion) main h1,
+.js:not(.reduce-motion) main h2:not(.card h2),
+.js:not(.reduce-motion) main .card,
+.js:not(.reduce-motion) main .stat-card,
+.js:not(.reduce-motion) main [data-reveal],
+.js:not(.reduce-motion) .reveal {
+  opacity: 0;
+  transform: translateY(1.25rem);
+}
+
+.js:not(.reduce-motion) main img:not(.card img):not([data-reveal] img):not(a img),
+.js:not(.reduce-motion) [data-reveal="scale"] {
+  opacity: 0;
+  transform: translateY(0.75rem) scale(0.97);
+}
+
+.js:not(.reduce-motion) .is-visible {
+  opacity: 1 !important;
+  transform: none !important;
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+/* Painel / SO pediram menos movimento: conteúdo visível, sem flutuação */
+.reduce-motion main h1,
+.reduce-motion main h2,
+.reduce-motion main .card,
+.reduce-motion main .stat-card,
+.reduce-motion main img,
+.reduce-motion main [data-reveal],
+.reduce-motion .reveal,
+.reduce-motion .is-visible {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+  animation: none !important;
+}
+
+.reduce-motion .decor-float,
+.reduce-motion .decor-float-slow {
+  animation: none !important;
+}
+
+/* Alto contraste: esconde decorações para não interferir na leitura */
+.high-contrast .decor-layer,
+.high-contrast .section-wave {
+  display: none;
+}

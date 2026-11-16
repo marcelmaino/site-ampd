@@ -6,7 +6,22 @@
   <meta name="description" content="AMPD — Associação Marauense da Pessoa com Deficiência. Promovendo direitos, inclusão e autonomia em Marau/RS.">
   <meta name="keywords" content="AMPD, Marau, pessoa com deficiência, inclusão, acessibilidade, direitos, TEA, Centro de Atendimento">
   <title>AMPD — Associação Marauense da Pessoa com Deficiência | Marau/RS</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
+    <script>
+    (function () {
+      var r = document.documentElement;
+      r.classList.add('js');
+      var reduce = false;
+      try { reduce = localStorage.getItem('reduceMotion') === '1'; } catch (e) {}
+      if (reduce || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        r.classList.add('reduce-motion');
+      }
+      setTimeout(function () {
+        if (!r.hasAttribute('data-anim-ready')) r.classList.add('reduce-motion');
+      }, 2500);
+    })();
+  </script>
+  <noscript><style>main h1,main h2,main .card,main .stat-card,main [data-reveal],.reveal,main img{opacity:1!important;transform:none!important}</style></noscript>
+<link rel="stylesheet" href="assets/css/styles.css">
   <style>
     .high-contrast {
       --tw-text-opacity: 1 !important;
@@ -14,7 +29,7 @@
     }
     
     .hero-card {
-      background: linear-gradient(135deg, rgba(46,48,146,0.1) 0%, rgba(7,106,151,0.1) 100%);
+      background: linear-gradient(135deg, rgba(46,48,146,0.08) 0%, rgba(7,106,151,0.08) 100%), #ffffff;
     }
     
     .word-highlight {
@@ -95,22 +110,24 @@
   <!-- Main Content -->
   <main id="main-content">
     <!-- Hero Section -->
-    <section class="container mx-auto px-4 py-12 md:py-20">
+    <section class="decor-section py-12 md:py-20">
+      <div class="decor-layer" aria-hidden="true"><svg class="decor-svg decor-tl decor-float" viewBox="0 0 200 200" fill="none" aria-hidden="true" focusable="false"><path fill="#00A2D1" fill-opacity="0.14" d="M42.1,-62.4C54.6,-54.1,64.5,-40.6,71.2,-25.6C77.9,-10.6,81.4,5.8,77.3,20.4C73.2,35,61.5,47.8,47.7,57.6C33.9,67.4,17,74.2,0.4,73.6C-16.1,73,-32.2,65.1,-46.1,54.5C-60,43.9,-71.7,30.6,-76.2,15.1C-80.7,-0.4,-78,-18.1,-69.8,-32.4C-61.6,-46.7,-47.9,-57.6,-33.3,-65C-18.7,-72.4,-3.1,-76.3,11.3,-75.6C25.7,-74.9,51.4,-69.6,42.1,-62.4Z" transform="translate(100 100)"/></svg><svg class="decor-svg decor-tr decor-float-slow" viewBox="0 0 200 200" fill="none" aria-hidden="true" focusable="false"><circle cx="100" cy="100" r="72" stroke="#6CDCFC" stroke-width="12" opacity="0.22"/><circle cx="100" cy="100" r="48" stroke="#6CDCFC" stroke-width="6" opacity="0.16" stroke-dasharray="18 14"/></svg><svg class="decor-svg decor-br decor-md" viewBox="0 0 160 160" aria-hidden="true" focusable="false"><defs><pattern id="dots-hero-home" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.55" fill="#B6B2D8"/></pattern></defs><rect width="160" height="160" fill="url(#dots-hero-home)" opacity="0.55"/></svg><svg class="decor-svg decor-bl" viewBox="0 0 200 200" fill="none" aria-hidden="true" focusable="false"><path fill="#2E3092" fill-opacity="0.08" d="M52.3,-70.1C66.8,-62.4,76.6,-45.4,81.2,-27.8C85.8,-10.2,85.2,8,78.4,23.4C71.6,38.8,58.6,51.4,44.1,61.7C29.6,72,13.6,80,-2.8,83.8C-19.2,87.6,-36,87.2,-49.8,78.6C-63.6,70,-74.4,53.2,-80.2,35.2C-86,17.2,-86.8,-2,-80.1,-18.4C-73.4,-34.8,-59.2,-48.4,-44.1,-56.4C-29,-64.4,-13,-66.8,3.6,-71.7C20.2,-76.6,37.8,-77.8,52.3,-70.1Z" transform="translate(100 100)"/></svg></div>
+      <div class="container mx-auto px-4">
       <div class="hero-card rounded-card-lg shadow-card p-8 md:p-12 lg:p-16 bg-white">
         <div class="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-outfit font-light leading-tight mb-6">
               Promovendo <span class="word-highlight">inclusão</span> e autonomia em Marau
             </h1>
-            <p class="text-lg md:text-xl mb-8 text-text-dark/80">
+            <p class="text-lg md:text-xl mb-8 text-text-dark/80" data-reveal>
               Nada sobre nós, sem nós. A AMPD trabalha pela defesa de direitos, acolhimento e desenvolvimento da pessoa com deficiência.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4">
+            <div class="flex flex-col sm:flex-row gap-4" data-reveal>
               <a href="pages/como-ajudar.html" class="btn-primary text-center">Saiba como ajudar</a>
               <a href="pages/a-ampd.html" class="btn-secondary text-center">Conheça nossa história</a>
             </div>
           </div>
-          <div class="relative">
+          <div class="relative" data-reveal="scale">
             <img src="assets/img/hero-inclusao.jpg" alt="Pessoas com deficiência participando de atividades de inclusão" class="rounded-card-lg w-full h-auto shadow-card" loading="lazy">
             <!-- Badge flutuante -->
             <div class="absolute top-4 right-4 bg-white rounded-card shadow-card p-4 text-center">
@@ -120,10 +137,13 @@
           </div>
         </div>
       </div>
+      </div>
     </section>
+    <div class="section-wave" aria-hidden="true"><svg viewBox="0 0 1440 72" preserveAspectRatio="none" focusable="false"><path fill="#ffffff" d="M0,40 C180,70 360,10 540,34 C720,58 900,14 1080,36 C1260,58 1380,48 1440,40 L1440,72 L0,72 Z"/></svg></div>
 
     <!-- Bloco PIX -->
-    <section id="doe-agora" class="bg-white py-12 md:py-16">
+    <section id="doe-agora" class="decor-section bg-white py-12 md:py-16">
+      <div class="decor-layer" aria-hidden="true"><svg class="decor-svg decor-tl decor-md" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><path fill="#076A97" fill-opacity="0.18" d="M60 102S16 74 16 44.5C16 28.5 28 18 42 18c8.5 0 15 5 18 12 3-7 9.5-12 18-12 14 0 26 10.5 26 26.5C104 74 60 102 60 102Z"/></svg><svg class="decor-svg decor-tr decor-md" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><path fill="#00A2D1" fill-opacity="0.16" d="M44 20c5 0 8 4 8 9v29c0 2 3 2 4 0V34c0-5 4-9 8-9s8 4 8 9v29c0 2 3 2 4 0V44c0-5 4-8 8-8s7 3 7 8v32c0 20-14 34-35 34S20 96 20 76V50c0-5 3-9 8-9s8 4 8 9v16c0 2 3 2 4 0V29c0-5 4-9 8-9z"/></svg><svg class="decor-svg decor-bl decor-sm" viewBox="0 0 160 160" aria-hidden="true" focusable="false"><defs><pattern id="dots-pix-home" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.55" fill="#B6B2D8"/></pattern></defs><rect width="160" height="160" fill="url(#dots-pix-home)" opacity="0.55"/></svg><svg class="decor-svg decor-br" viewBox="0 0 200 200" fill="none" aria-hidden="true" focusable="false"><path fill="#6CDCFC" fill-opacity="0.20" d="M52.3,-70.1C66.8,-62.4,76.6,-45.4,81.2,-27.8C85.8,-10.2,85.2,8,78.4,23.4C71.6,38.8,58.6,51.4,44.1,61.7C29.6,72,13.6,80,-2.8,83.8C-19.2,87.6,-36,87.2,-49.8,78.6C-63.6,70,-74.4,53.2,-80.2,35.2C-86,17.2,-86.8,-2,-80.1,-18.4C-73.4,-34.8,-59.2,-48.4,-44.1,-56.4C-29,-64.4,-13,-66.8,3.6,-71.7C20.2,-76.6,37.8,-77.8,52.3,-70.1Z" transform="translate(100 100)"/></svg></div>
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
           <div class="text-center mb-8">
@@ -133,7 +153,7 @@
           
           <div class="grid md:grid-cols-2 gap-8 items-center">
             <!-- QR Code -->
-            <div class="flex flex-col items-center">
+            <div class="flex flex-col items-center" data-reveal="scale">
               <div class="bg-paper p-6 rounded-card mb-4">
                 <img src="assets/img/qr-pix-placeholder.svg" alt="QR Code PIX da AMPD" class="w-64 h-64" loading="lazy">
               </div>
@@ -141,7 +161,7 @@
             </div>
 
             <!-- Chave PIX -->
-            <div class="space-y-4">
+            <div class="space-y-4" data-reveal>
               <div>
                 <label class="block text-sm font-semibold mb-2">Chave PIX:</label>
                 <div class="flex gap-2">
@@ -234,7 +254,8 @@
     </section>
 
     <!-- Quem Somos -->
-    <section class="bg-white py-12 md:py-16">
+    <section class="decor-section bg-white py-12 md:py-16">
+      <div class="decor-layer" aria-hidden="true"><svg class="decor-svg decor-ml" viewBox="0 0 200 200" fill="none" aria-hidden="true" focusable="false"><path fill="#00A2D1" fill-opacity="0.12" d="M52.3,-70.1C66.8,-62.4,76.6,-45.4,81.2,-27.8C85.8,-10.2,85.2,8,78.4,23.4C71.6,38.8,58.6,51.4,44.1,61.7C29.6,72,13.6,80,-2.8,83.8C-19.2,87.6,-36,87.2,-49.8,78.6C-63.6,70,-74.4,53.2,-80.2,35.2C-86,17.2,-86.8,-2,-80.1,-18.4C-73.4,-34.8,-59.2,-48.4,-44.1,-56.4C-29,-64.4,-13,-66.8,3.6,-71.7C20.2,-76.6,37.8,-77.8,52.3,-70.1Z" transform="translate(100 100)"/></svg><svg class="decor-svg decor-tr decor-sm" viewBox="0 0 160 160" aria-hidden="true" focusable="false"><defs><pattern id="dots-about-home" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.55" fill="#B6B2D8"/></pattern></defs><rect width="160" height="160" fill="url(#dots-about-home)" opacity="0.55"/></svg><svg class="decor-svg decor-br" viewBox="0 0 200 200" fill="none" aria-hidden="true" focusable="false"><circle cx="100" cy="100" r="72" stroke="#076A97" stroke-width="12" opacity="0.22"/><circle cx="100" cy="100" r="48" stroke="#076A97" stroke-width="6" opacity="0.16" stroke-dasharray="18 14"/></svg></div>
       <div class="container mx-auto px-4">
         <div class="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           <div>
@@ -247,7 +268,7 @@
             </p>
             <a href="pages/a-ampd.html" class="btn-primary">Conheça nossa história</a>
           </div>
-          <div>
+          <div data-reveal="scale">
             <img src="assets/img/sobre-ampd.jpg" alt="Equipe e participantes da AMPD" class="rounded-card-lg shadow-card w-full h-auto" loading="lazy">
           </div>
         </div>
@@ -310,51 +331,53 @@
         </div>
       </div>
     </section>
+    <div class="section-wave" aria-hidden="true"><svg viewBox="0 0 1440 72" preserveAspectRatio="none" focusable="false"><path fill="#011225" d="M0,40 C180,70 360,10 540,34 C720,58 900,14 1080,36 C1260,58 1380,48 1440,40 L1440,72 L0,72 Z"/></svg></div>
 
     <!-- Números (bento style) -->
-    <section class="bg-navy text-white py-12 md:py-16">
+    <section class="decor-section bg-navy text-white py-12 md:py-16">
+      <div class="decor-layer" aria-hidden="true"><svg class="decor-svg decor-tl" viewBox="0 0 200 200" fill="none" aria-hidden="true" focusable="false"><path fill="#6CDCFC" fill-opacity="0.12" d="M42.1,-62.4C54.6,-54.1,64.5,-40.6,71.2,-25.6C77.9,-10.6,81.4,5.8,77.3,20.4C73.2,35,61.5,47.8,47.7,57.6C33.9,67.4,17,74.2,0.4,73.6C-16.1,73,-32.2,65.1,-46.1,54.5C-60,43.9,-71.7,30.6,-76.2,15.1C-80.7,-0.4,-78,-18.1,-69.8,-32.4C-61.6,-46.7,-47.9,-57.6,-33.3,-65C-18.7,-72.4,-3.1,-76.3,11.3,-75.6C25.7,-74.9,51.4,-69.6,42.1,-62.4Z" transform="translate(100 100)"/></svg><svg class="decor-svg decor-tr" viewBox="0 0 200 200" fill="none" aria-hidden="true" focusable="false"><circle cx="100" cy="100" r="72" stroke="#00A2D1" stroke-width="12" opacity="0.22"/><circle cx="100" cy="100" r="48" stroke="#00A2D1" stroke-width="6" opacity="0.16" stroke-dasharray="18 14"/></svg><svg class="decor-svg decor-bl decor-md" viewBox="0 0 160 160" aria-hidden="true" focusable="false"><defs><pattern id="dots-stats-home" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.55" fill="#6CDCFC"/></pattern></defs><rect width="160" height="160" fill="url(#dots-stats-home)" opacity="0.55"/></svg><svg class="decor-svg decor-br" viewBox="0 0 200 200" fill="none" aria-hidden="true" focusable="false"><path fill="#00A2D1" fill-opacity="0.10" d="M52.3,-70.1C66.8,-62.4,76.6,-45.4,81.2,-27.8C85.8,-10.2,85.2,8,78.4,23.4C71.6,38.8,58.6,51.4,44.1,61.7C29.6,72,13.6,80,-2.8,83.8C-19.2,87.6,-36,87.2,-49.8,78.6C-63.6,70,-74.4,53.2,-80.2,35.2C-86,17.2,-86.8,-2,-80.1,-18.4C-73.4,-34.8,-59.2,-48.4,-44.1,-56.4C-29,-64.4,-13,-66.8,3.6,-71.7C20.2,-76.6,37.8,-77.8,52.3,-70.1Z" transform="translate(100 100)"/></svg></div>
       <div class="container mx-auto px-4">
         <h2 class="text-3xl md:text-4xl lg:text-5xl font-outfit font-light text-center mb-12">Nosso impacto em números</h2>
         
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           <!-- Número 1 - grande -->
-          <div class="md:col-span-2 lg:col-span-2 bg-white/10 backdrop-blur rounded-card p-8 text-center">
+          <div class="stat-card md:col-span-2 lg:col-span-2 bg-white/10 backdrop-blur rounded-card p-8 text-center">
             <p class="text-6xl md:text-7xl font-outfit font-light mb-2" data-counter="12">12</p>
             <p class="text-lg text-cyan-light">Anos de atuação</p>
           </div>
 
           <!-- Número 2 -->
-          <div class="bg-white/10 backdrop-blur rounded-card p-6 text-center">
+          <div class="stat-card bg-white/10 backdrop-blur rounded-card p-6 text-center">
             <p class="text-4xl md:text-5xl font-outfit font-light mb-2" data-counter="50">50</p>
             <p class="text-sm text-cyan-light">Famílias no grupo Mães TEA</p>
           </div>
 
           <!-- Número 3 -->
-          <div class="bg-white/10 backdrop-blur rounded-card p-6 text-center">
+          <div class="stat-card bg-white/10 backdrop-blur rounded-card p-6 text-center">
             <p class="text-4xl md:text-5xl font-outfit font-light mb-2" data-counter="50">50</p>
             <p class="text-sm text-cyan-light">Pessoas atendidas no Centro</p>
           </div>
 
           <!-- Número 4 -->
-          <div class="bg-white/10 backdrop-blur rounded-card p-6 text-center">
+          <div class="stat-card bg-white/10 backdrop-blur rounded-card p-6 text-center">
             <p class="text-4xl md:text-5xl font-outfit font-light mb-2">R$ 497k</p>
             <p class="text-sm text-cyan-light">Gestão do Centro em 2026</p>
           </div>
 
           <!-- Número 5 -->
-          <div class="bg-white/10 backdrop-blur rounded-card p-6 text-center">
+          <div class="stat-card bg-white/10 backdrop-blur rounded-card p-6 text-center">
             <p class="text-4xl md:text-5xl font-outfit font-light mb-2">R$ 7,5k</p>
             <p class="text-sm text-cyan-light">Manutenção AMPD 2026</p>
           </div>
 
           <!-- Número 6 -->
-          <div class="bg-white/10 backdrop-blur rounded-card p-6 text-center">
+          <div class="stat-card bg-white/10 backdrop-blur rounded-card p-6 text-center">
             <p class="text-4xl md:text-5xl font-outfit font-light mb-2" data-counter="2013">2013</p>
             <p class="text-sm text-cyan-light">Fundação (CNPJ)</p>
           </div>
 
           <!-- Número 7 -->
-          <div class="bg-white/10 backdrop-blur rounded-card p-6 text-center">
+          <div class="stat-card bg-white/10 backdrop-blur rounded-card p-6 text-center">
             <p class="text-4xl md:text-5xl font-outfit font-light mb-2">1</p>
             <p class="text-sm text-cyan-light">Assento no COMUDEF</p>
           </div>
@@ -365,15 +388,17 @@
         </p>
       </div>
     </section>
+    <div class="section-wave bg-navy" aria-hidden="true"><svg viewBox="0 0 1440 72" preserveAspectRatio="none" focusable="false"><path fill="#ffffff" d="M0,40 C180,70 360,10 540,34 C720,58 900,14 1080,36 C1260,58 1380,48 1440,40 L1440,72 L0,72 Z"/></svg></div>
 
     <!-- Newsletter -->
-    <section class="py-12 md:py-16 bg-white">
+    <section class="decor-section py-12 md:py-16 bg-white">
+      <div class="decor-layer" aria-hidden="true"><svg class="decor-svg decor-tl decor-sm decor-float-slow" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><path fill="#076A97" fill-opacity="0.18" d="M60 102S16 74 16 44.5C16 28.5 28 18 42 18c8.5 0 15 5 18 12 3-7 9.5-12 18-12 14 0 26 10.5 26 26.5C104 74 60 102 60 102Z"/></svg><svg class="decor-svg decor-br" viewBox="0 0 200 200" fill="none" aria-hidden="true" focusable="false"><path fill="#00A2D1" fill-opacity="0.12" d="M52.3,-70.1C66.8,-62.4,76.6,-45.4,81.2,-27.8C85.8,-10.2,85.2,8,78.4,23.4C71.6,38.8,58.6,51.4,44.1,61.7C29.6,72,13.6,80,-2.8,83.8C-19.2,87.6,-36,87.2,-49.8,78.6C-63.6,70,-74.4,53.2,-80.2,35.2C-86,17.2,-86.8,-2,-80.1,-18.4C-73.4,-34.8,-59.2,-48.4,-44.1,-56.4C-29,-64.4,-13,-66.8,3.6,-71.7C20.2,-76.6,37.8,-77.8,52.3,-70.1Z" transform="translate(100 100)"/></svg><svg class="decor-svg decor-tr decor-sm" viewBox="0 0 160 160" aria-hidden="true" focusable="false"><defs><pattern id="dots-news-home" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.55" fill="#B6B2D8"/></pattern></defs><rect width="160" height="160" fill="url(#dots-news-home)" opacity="0.55"/></svg></div>
       <div class="container mx-auto px-4">
         <div class="max-w-2xl mx-auto text-center">
           <h2 class="section-title text-center mb-4">Fique por dentro</h2>
           <p class="text-lg text-text-dark/80 mb-8">Receba novidades, eventos e informações sobre direitos das pessoas com deficiência</p>
           
-          <form class="newsletter-form flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+          <form class="newsletter-form flex flex-col sm:flex-row gap-4 max-w-lg mx-auto" data-reveal>
             <input 
               type="email" 
               required 
@@ -580,9 +605,10 @@
       </div>
     </section>
   </main>
+    <div class="section-wave" aria-hidden="true"><svg viewBox="0 0 1440 72" preserveAspectRatio="none" focusable="false"><path fill="#011225" d="M0,40 C180,70 360,10 540,34 C720,58 900,14 1080,36 C1260,58 1380,48 1440,40 L1440,72 L0,72 Z"/></svg></div>
 
   <!-- Footer -->
-  <footer class="bg-navy text-white py-12">
+  <footer class="decor-footer bg-navy text-white py-12"><div class="decor-layer" aria-hidden="true"><svg class="decor-svg decor-tl" viewBox="0 0 200 200" fill="none" aria-hidden="true" focusable="false"><path fill="#00A2D1" fill-opacity="0.12" d="M42.1,-62.4C54.6,-54.1,64.5,-40.6,71.2,-25.6C77.9,-10.6,81.4,5.8,77.3,20.4C73.2,35,61.5,47.8,47.7,57.6C33.9,67.4,17,74.2,0.4,73.6C-16.1,73,-32.2,65.1,-46.1,54.5C-60,43.9,-71.7,30.6,-76.2,15.1C-80.7,-0.4,-78,-18.1,-69.8,-32.4C-61.6,-46.7,-47.9,-57.6,-33.3,-65C-18.7,-72.4,-3.1,-76.3,11.3,-75.6C25.7,-74.9,51.4,-69.6,42.1,-62.4Z" transform="translate(100 100)"/></svg><svg class="decor-svg decor-br decor-md" viewBox="0 0 160 160" aria-hidden="true" focusable="false"><defs><pattern id="dots-footer-home" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.55" fill="#6CDCFC"/></pattern></defs><rect width="160" height="160" fill="url(#dots-footer-home)" opacity="0.55"/></svg><svg class="decor-svg decor-ml" viewBox="0 0 200 200" fill="none" aria-hidden="true" focusable="false"><circle cx="100" cy="100" r="72" stroke="#6CDCFC" stroke-width="12" opacity="0.22"/><circle cx="100" cy="100" r="48" stroke="#6CDCFC" stroke-width="6" opacity="0.16" stroke-dasharray="18 14"/></svg></div>
     <div class="container mx-auto px-4">
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
         <!-- Sobre -->
